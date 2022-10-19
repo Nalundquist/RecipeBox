@@ -4,6 +4,7 @@ using RecipeBox.Models;
 using System.Threading.Tasks;
 using RecipeBox.ViewModels;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 using System;
 
 namespace RecipeBox.Controllers
@@ -38,6 +39,9 @@ namespace RecipeBox.Controllers
 			IdentityResult result = await _userManager.CreateAsync(user, model.Password);
 			if (result.Succeeded)
 			{
+				await _userManager.AddClaimAsync(user, new Claim("FullName", user.FullName));
+				await _userManager.AddClaimAsync(user, new Claim("DOB", user.DOB.ToString("MM/dd/yyyy")));
+				await _signInManager.SignInAsync(user, isPersistent: true);
 				return RedirectToAction("Index");
 			}
 			else

@@ -2,15 +2,14 @@
 	Layout = "_Layout";
 }
 
-@using RecipeBox.Models;
-
-@model RecipeBox.Models.ApplicationUser
+@using RecipeBox.Extensions;
 
 <h2>Authentication with Identity</h2>
 <hr />
 @if (User.Identity.IsAuthenticated)
 {
-  <p>Hello @User.Identity.Name</p>
+  <p>Hello @User.GetFullName()</p>
+  <p>User Date of Birth: @User.GetDOB()</p>
   @using (Html.BeginForm("LogOff", "Account"))
   {
     <input type="submit" class="btn btn-primary" value="Log out" />
