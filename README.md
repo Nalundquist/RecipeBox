@@ -50,7 +50,7 @@ followed by
 
 		{
   		"ConnectionStrings": {
-      	"DefaultConnection": "Server=localhost;Port=3306;database=recipe_box;uid=[USERNAME];pwd=[PASSWORD];"
+      	"DefaultConnection": "Server=localhost;Port=3306;database=recipebox;uid=[USERNAME];pwd=[PASSWORD];"
   		}
 		}
 
