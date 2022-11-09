@@ -68,6 +68,10 @@ Follwing this you can navigate to http://localhost:5000 in the browser of your c
 
 For some reason User.Identity._____ does not point to what I generally understand to be the default table for such (RecipeBox.Models.ApplicationUser in this case) and as such we were unable to call any more than a Name field for the user on the account index page.
 
+//FIXED// 
+
+Added a claim extension to grab other fields from the signed in user.
+
 ## License
 
 Licensed under [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)
